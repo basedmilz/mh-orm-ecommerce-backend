@@ -9,7 +9,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
     try { 
       // find all products
       // be sure to include its associated Category and Tag data
-      const products = await Product.findAll({ include: [{Category}, {Tag}],
+      const products = await Product.findAll({ include: [{model: Category}, {model: Tag, through:ProductTag}],
       });
       res.status(200).json(products);
       
@@ -25,8 +25,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/:id', async (req, res) => {
   try {
     const productId = await Product.findByPk(req.params.id, {
-      // JOIN with travellers, using the Trip through table
-      include: [{ model: Product }, {model: Tag}]
+      include: [{ model: Category }, {model: Tag}]
     });
 
     if (!productId) {

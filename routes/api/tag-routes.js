@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
-// The `/api/tags` endpoint
+// The `/api/tagData` endpoint
 
-// find all tags
+// find all tagData
 // be sure to include its associated Product data
 router.get('/', async (req, res) => {
   try {
-    const tags = await Tag.findAll({ include: [{Product}]});
-    res.status(200).json(tags);
+    const tagData = await Tag.findAll({ include: [{model:Product, through:ProductTag}]});
+    res.status(200).json(tagData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const tagId = await Tag.findByPk(req.params.id, {
-      // JOIN with travellers, using the Trip through table
       include: [{ model: Product }]
     });
 
