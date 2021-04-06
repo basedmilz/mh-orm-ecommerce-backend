@@ -20,13 +20,13 @@ This is an app that uses backend technologies to display different elements of y
 ![gif](/video/walk1.gif)
 
 ### Category
-![gif](/assets/walk2.gif)
+![gif](/video/walk2.gif)
 
 ### Tags
-![gif](/assets/walk3.gif)
+![gif](/video/walk3.gif)
 
 ### Products
-![gif](/assets/walk4gif)
+![gif](/video/walk4gif)
 
 ---
 
