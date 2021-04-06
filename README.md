@@ -26,7 +26,7 @@ This is an app that uses backend technologies to display different elements of y
 ![gif](/video/walk3.gif)
 
 ### Products
-![gif](/video/walk4gif)
+![gif](/video/walk4.gif)
 
 ---
 
